@@ -39,7 +39,6 @@ define([
 		// loop through each history state
 		if (model) {
 			var history = model.getSavedHistory();
-			console.log(this.hiddenElements)
 			for (var i = 0, c = history.length; i < c; i++) {
 				if (this.hiddenElements.indexOf(i) !== -1) {
 					continue;
@@ -55,7 +54,7 @@ define([
 				if (this.displayTime) {
 					text += history[i].time;
 				}
-				if (i > 0 && i !== c) {
+				if (i > 0 && i !== c - 1) {
 					text += '<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
 				}
 				$historyList.append('<li class="' + classCurrent + '" data-history="' + i + '">' + text + '</li>');
