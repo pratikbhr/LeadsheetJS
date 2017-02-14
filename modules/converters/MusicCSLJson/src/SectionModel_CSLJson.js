@@ -21,7 +21,12 @@ define(['modules/core/src/SectionModel'], function(SectionModel) {
 			sectionMusicCSLJSON.timeSig = sectionModel.getTimeSignature().toString();
 
 		if (sectionModel.getRepeatTimes())
-			sectionMusicCSLJSON.repeat = sectionModel.getRepeatTimes();
+			var tempRepTime = sectionModel.getRepeatTimes();
+			if (tempRepTime === 0 || tempRepTime === undefined) {
+				sectionMusicCSLJSON.repeat = 0;
+			}	else {
+				sectionMusicCSLJSON.repeat = sectionModel.getRepeatTimes();
+			}
 
 		if (sectionModel.getStyle())
 			sectionMusicCSLJSON.style = sectionModel.getStyle();
