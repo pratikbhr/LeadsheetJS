@@ -25,7 +25,7 @@ define(['modules/core/src/SectionModel'], function(SectionModel) {
 			if (tempRepTime === 0 || tempRepTime === undefined) {
 				sectionMusicCSLJSON.repeat = 0;
 			}	else {
-				sectionMusicCSLJSON.repeat = sectionModel.getRepeatTimes();
+				sectionMusicCSLJSON.repeat = tempRepTime;
 			}
 
 		if (sectionModel.getStyle())
